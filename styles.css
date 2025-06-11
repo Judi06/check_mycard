@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #4a6bff;
     --secondary-color: #ff6b6b;
@@ -158,11 +157,16 @@ nav {
     position: relative;
     overflow: hidden;
     color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
     .hero {
         padding-top: 80px;
+        min-height: auto;
+        padding-bottom: 80px;
     }
 }
 
@@ -192,29 +196,40 @@ nav {
     height: 100%;
     opacity: 0;
     transition: opacity 1s ease;
-    background-size: cover;
+    background-size: contain; /* Changé de cover à contain */
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #f5f7ff; /* Ajout d'une couleur de fond */
 }
 
 .slide.active {
     opacity: 1;
 }
 
+/* Images spécifiques avec des styles adaptés */
 .slide:nth-child(1) {
     background-image: url('images/average-score-for-a-20-year-old-e1738223302678.jpg');
+    background-size: cover; /* Garde cover pour la première image */
 }
+
 .slide:nth-child(2) {
     background-image: url('images/neosurf.png');
+    background-size: contain;
 }
+
 .slide:nth-child(3) {
     background-image: url('images/toneo.png');
+    background-size: contain;
 }
+
 .slide:nth-child(4) {
     background-image: url('images/transcash.jfif');
+    background-size: contain;
 }
+
 .slide:nth-child(5) {
     background-image: url('images/apple_card.jfif');
+    background-size: contain;
 }
 
 .hero-content {
@@ -1105,6 +1120,15 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+    
+    /* Ajustements spécifiques pour les slides sur mobile */
+    .slide {
+        background-size: contain;
+    }
+    
+    .slide:nth-child(1) {
+        background-size: cover;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1145,9 +1169,6 @@ footer {
         width: 100%;
     }
 }
-
-
-
 
 /* ============================================= */
 /* Sélecteur de langue - Styles de base */
