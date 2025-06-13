@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="style-selector.css">
+    <script src="script-selector.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -16,46 +17,13 @@
             <nav>
                 <span class="logo-text">Activate myCard</span>
 
-                <!-- Sélecteur de langue - Début -->
-                <div class="language-selector">
-                    <!-- Checkbox invisible pour gérer l'état ouvert/fermé du dropdown -->
-                    <input type="checkbox" id="language-toggle">
-                    
-                    <!-- Bouton visible du sélecteur -->
-                    <label for="language-toggle" class="language-current">
-                        <!-- Icône globe (remplace le drapeau) -->
-                        <i class="fas fa-globe"></i>
-                        <!-- Code de la langue (FR/EN/DE/etc.) -->
-                        <span class="language-code">FR</span>
-                        <!-- Icône flèche -->
-                        <i class="fas fa-chevron-down"></i>
-                    </label>
-                    
-                    <!-- Liste des langues disponibles -->
-                    <ul class="language-dropdown">
-                        <!-- Chaque lien pointe vers la même page dans une autre langue -->
-                        <li><a href="index-fr.html" class="active" title="Français">
-                            <span class="flag-icon flag-fr"></span> Français</a></li>
-                        
-                        <li><a href="index-en.html" title="English">
-                            <span class="flag-icon flag-gb"></span> English</a></li>
-                        
-                        <li><a href="index-de.html" title="Deutsch">
-                            <span class="flag-icon flag-de"></span> Deutsch</a></li>
-                        
-                        <li><a href="index-it.html" title="Italiano">
-                            <span class="flag-icon flag-it"></span> Italiano</a></li>
-                    </ul>
-                </div>
-                <!-- Sélecteur de langue - Fin -->
-*
+                <div class="navbar-translate" id="google_translate_element"></div>
                 <ul class="nav-links">
                     <li><a href="#about">Présentation</a></li>
                     <li><a href="#benefits">Avantages</a></li>
                     <li><a href="#why-us">Pourquoi nous choisir</a></li>
                     <li><a href="#steps">Mes premiers pas</a></li>
                     <li><a href="#testimonials">Avis Internautes</a></li>
-                    <li><a href="#faq">FAQ</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -71,13 +39,14 @@
             <div class="slide"></div>
             <div class="slide"></div>
             <div class="slide"></div>
+            <div class="slide"></div>
         </div>
         <div class="container hero-content">
             <h1>Activez vos coupons de recharge en un clic</h1>
-            <p>Activate myCard vous permet de vérifier instantanément la validité de vos coupons de recharge mobile avant utilisation, pour éviter les mauvaises surprises.</p>
+            <p>Activate myCard vous permet d'activer instantanément vos coupons de recharge mobile avant utilisation, pour éviter les mauvaises surprises.</p>
             <div class="hero-btns">
-                <a href="verifier-coupon-fr.html" class="btn btn-primary">Vérifier mon Coupon</a>
-                <a href="#benefits" class="btn btn-outline">Nos avantages</a>
+                <a href="verifier-coupon-fr.html" class="btn btn-primary">Activer mon Coupon</a>
+                <a href="remboursement.html" class="btn btn-outline">Demander Remboursement</a>
             </div>
         </div>
     </section>
@@ -87,12 +56,12 @@
         <div class="container">
             <div class="section-title">
                 <h2>Présentation</h2>
-                <p>Découvrez comment Activate myCard révolutionne la Activation des coupons de recharge mobile</p>
+                <p>Découvrez comment Activate myCard révolutionne l'activation des coupons de recharge mobile</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <h3>La solution simple et efficace pour vos recharges</h3>
-                    <p>Activate myCard est une plateforme innovante qui vous permet de vérifier en quelques secondes la validité de vos coupons de recharge mobile avant de les utiliser. Plus de mauvaises surprises avec des coupons déjà utilisés ou expirés.</p>
+                    <p>Activate myCard est une plateforme innovante qui vous permet d'activer en quelques secondes la validité de vos coupons de recharge mobile avant de les utiliser. Plus de mauvaises surprises avec des coupons déjà utilisés ou expirés.</p>
                     <p>Notre technologie avancée analyse les codes de recharge et vous fournit une réponse instantanée sur leur état. Simple, rapide et sécurisé.</p>
                     <div class="about-features">
                         <div class="feature-item">
@@ -119,7 +88,7 @@
                             </div>
                             <div class="feature-text">
                                 <h4>Multi-opérateurs</h4>
-                                <p>Compatibilité avec tous les principaux opérateurs mobiles</p>
+                                <p>Compatibilité avec tous les principaux opérateurs</p>
                             </div>
                         </div>
                     </div>
@@ -144,21 +113,21 @@
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Gain de temps</h3>
-                    <p>Plus besoin de contacter le service client de votre opérateur pour vérifier un coupon. Notre solution vous donne la réponse en quelques secondes.</p>
+                    <p>Plus besoin de contacter le service client de votre opérateur pour activer un coupon. Notre solution le fait pour vous en quelques secondes.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-lock"></i>
                     </div>
                     <h3>Sécurité renforcée</h3>
-                    <p>Évitez les arnaques avec des coupons déjà utilisés ou falsifiés. Notre Activation vous protège contre les fraudes.</p>
+                    <p>Évitez les arnaques avec des coupons déjà utilisés ou falsifiés. Notre activation vous protège contre les fraudes.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Suivi précis</h3>
-                    <p>Conservez l'historique de toutes vos Activations et recharges pour un meilleur suivi de vos dépenses mobiles.</p>
+                    <p>Nous conservons l'historique de toutes vos activations et recharges pour un meilleur suivi de vos dépenses mobiles.</p>
                 </div>
             </div>
         </div>
@@ -177,7 +146,7 @@
                 </div>
                 <div class="why-us-text">
                     <h3>Une expérience utilisateur exceptionnelle</h3>
-                    <p>Activate myCard a été conçu en pensant avant tout à la simplicité d'utilisation et à l'efficacité. Notre interface intuitive permet à n'importe qui de vérifier un coupon en quelques clics seulement.</p>
+                    <p>Activate myCard a été conçu en pensant avant tout à la simplicité d'utilisation et à l'efficacité. Notre interface intuitive permet à n'importe qui d'activer un coupon en quelques clics seulement.</p>
                     <div class="why-us-points">
                         <div class="why-us-point">
                             <i class="fas fa-check-circle"></i>
@@ -221,7 +190,7 @@
                         <div class="step-content">
                             <div class="step-number">1</div>
                             <h3>Entrez votre coupon</h3>
-                            <p>Saisissez le code de recharge que vous souhaitez vérifier dans notre interface simple et intuitive.</p>
+                            <p>Saisissez le code de recharge que vous souhaitez activer dans notre interface simple et intuitive.</p>
                         </div>
                         <div class="step-branch"></div>
                     </div>
@@ -293,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"En tant que revendeur, Activate myCard est un outil indispensable. Je peux vérifier instantanément la validité des coupons, ce qui m'évite des pertes financières."</p>
+                    <p class="testimonial-text">"En tant que revendeur, Activate myCard est un outil indispensable. Je peux activer instantanément la validité des coupons, ce qui m'évite des pertes financières."</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-header">
@@ -611,7 +580,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">"Mon application préférée pour vérifier mes recharges !"</p>
+                    <p class="testimonial-text">"Mon application préférée pour activer mes recharges !"</p>
                 </div>
 
                 <div class="testimonial-card">
@@ -958,70 +927,14 @@
         Merci pour votre avis ! Nous l'avons bien reçu.
     </div>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>FAQ</h2>
-                <p>Questions fréquemment posées sur Activate myCard</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Comment fonctionne la Activation des coupons ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Notre système analyse la structure du code de recharge et vérifie sa validité auprès de nos bases de données et algorithmes propriétaires. Nous comparons le format du code avec ceux des opérateurs partenaires et vérifions qu'il n'a pas déjà été utilisé ou signalé comme frauduleux.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Est-ce que le service est vraiment gratuit ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Oui, la Activation de base des coupons est totalement gratuite. Nous proposons également des options premium avec des fonctionnalités avancées comme l'historique illimité ou les alertes de fraude, mais la Activation simple reste accessible à tous sans frais.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Quels opérateurs sont pris en charge ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Nous supportons actuellement tous les principaux opérateurs du marché (Orange, MTN, Vodafone, etc.) dans plusieurs pays. Notre liste d'opérateurs compatibles s'agrandit régulièrement.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Mes données personnelles sont-elles sécurisées ?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Absolument. Nous utilisons un chiffrement de bout en bout pour toutes les données transmises. Les codes de recharge que vous Activez ne sont pas stockés dans notre base de données après analyse.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Prêt à vérifier vos coupons en toute confiance ?</h2>
+            <h2>Prêt à activer vos coupons en toute confiance ?</h2>
             <p>Essayez Activate myCard dès maintenant et dites adieu aux mauvaises surprises avec vos recharges mobiles.</p>
             <div class="cta-btns">
-                <a href="verifier-coupon-fr.html" class="btn btn-secondary">Vérifier mon Coupon</a>
-                <a href="#faq" class="btn btn-outline">En savoir plus</a>
+                <a href="verifier-coupon-fr.html" class="btn btn-secondary">Activer mon Coupon</a>
+                <a href="remboursement.html" class="btn btn-outline">Demander Remboursement</a>
             </div>
         </div>
     </section>
@@ -1032,7 +945,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Activate myCard</h3>
-                    <p>La solution la plus fiable pour vérifier vos coupons de recharge mobile avant utilisation.</p>
+                    <p>La solution la plus fiable pour activer vos coupons de recharge mobile avant utilisation.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1068,24 +981,7 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Liste des langues disponibles
-        const supportedLangs = ['fr', 'en', 'de', 'it'];
-        
-        // Détection de la langue
-        const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
-        
-        // Langue par défaut
-        const defaultLang = 'fr';
-        
-        // Détermination de la langue cible
-        const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
-        
-        // Vérifie qu'on n'est pas déjà sur la bonne page
-        if (!window.location.pathname.includes(`index-${targetLang}.html`)) {
-            console.log('Redirecting to:', targetLang);
-            window.location.href = `index-${targetLang}.html`;
-        }
-    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="//code.tidio.co/u8u7pdwcln1nigxjfyou67nmbqfkbips.js" async></script>
 </body>
 </html>
