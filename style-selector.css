@@ -1,0 +1,117 @@
+/* Styles de base de la navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: #2c3e50;
+    color: white;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+}
+
+.navbar-links a:hover {
+    color: #3498db;
+}
+
+/* Styles pour le traducteur compact */
+.navbar-translate {
+    margin-left: 1rem;
+    transform: scale(0.9);
+    transform-origin: right;
+}
+
+.goog-te-combo {
+    padding: 4px 6px !important;
+    border-radius: 3px !important;
+    border: 1px solid #ddd !important;
+    background-color: #f8f8f8 !important;
+    font-size: 11px !important;
+    color: #333 !important;
+    cursor: pointer;
+    height: 28px !important;
+    min-width: 110px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    appearance: menulist !important;
+}
+
+/* Masquer les éléments inutiles */
+.goog-te-banner-frame, .goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+.goog-te-gadget-simple {
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+}
+
+/* Menu déroulant optimisé */
+.goog-te-menu-value span {
+    display: none !important;
+}
+
+.goog-te-menu-value img {
+    display: none !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 0.6rem 1rem;
+    }
+    
+    .navbar-brand {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .navbar-links {
+        order: 2;
+        width: auto;
+        margin: 0 auto;
+    }
+    
+    .navbar-translate {
+        order: 3;
+        margin: 0.5rem auto 0;
+        transform: scale(0.8);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .goog-te-combo {
+        width: 100% !important;
+        max-width: 150px !important;
+    }
+}
