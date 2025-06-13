@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vérifier un coupon - Activate-myCard</title>
+    <title>Activer un coupon - Activate-myCard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -329,6 +329,8 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="style-selector.css">
+    <script src="script-selector.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -337,10 +339,11 @@
             <nav>
                 <span class="logo-text">Activate-myCard</span>
 
+                <div class="navbar-translate" id="google_translate_element"></div>
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="verifier-coupon-fr.html" class="active">Activer un coupon</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="remboursement.html" class="active">Demander Remboursement</a></li>
+                    
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -422,7 +425,7 @@
     <!-- Notification -->
     <div class="notification" id="notification">
         <i class="fas fa-check-circle"></i>
-        <span id="notification-message">Votre demande d'analyse est en cours. Vous recevrez un courriel de confirmation dans la minute.</span>
+        <span id="notification-message">Votre demande d'activation est en cours. Vous recevrez un courriel de confirmation dans la minute.</span>
     </div>
 
     <!-- Footer -->
@@ -437,8 +440,8 @@
                     <h3>Liens rapides</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Accueil</a></li>
-                        <li><a href="verifier-coupon-fr.html">Vérifier un coupon</a></li>
-                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="verifier-coupon-fr.html">Activer un coupon</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -534,5 +537,7 @@
             });
         });
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="//code.tidio.co/u8u7pdwcln1nigxjfyou67nmbqfkbips.js" async></script>
 </body>
 </html>
