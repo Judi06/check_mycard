@@ -1,84 +1,45 @@
-        /* Widget rond fixe */
-        .floating-translate-round {
+        /* Positionnement fixe en bas à droite */
+        .floating-translate {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             z-index: 9999;
-            width: 50px;
-            height: 50px;
-            border-radius: 50% !important;
-            overflow: hidden !important;
+            transition: all 0.3s ease;
         }
         
-        /* Bouton principal */
-        .floating-translate-round .gt_switcher .gt_selected {
-            width: 50px;
-            height: 50px;
-            border-radius: 50% !important;
+        /* Style du bouton principal */
+        .floating-translate .gt_switcher .gt_selected {
             background: #4285f4 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 0 !important;
+            color: white !important;
+            padding: 12px 20px !important;
+            border-radius: 30px !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
             border: none !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
-            transition: all 0.3s ease !important;
-            cursor: pointer;
+            font-weight: bold !important;
         }
         
-        /* Cache le texte */
-        .floating-translate-round .gt_switcher .gt_selected a span {
-            display: none !important;
-        }
-        
-        /* Icône globe */
-        .floating-translate-round .gt_switcher .gt_selected a:before {
-            content: "🌐";
-            font-size: 24px;
-            margin: 0 !important;
-        }
-        
-        /* Animation */
-        .floating-translate-round .gt_switcher .gt_selected:hover {
-            transform: scale(1.1);
+        /* Style au survol */
+        .floating-translate .gt_switcher .gt_selected:hover {
             background: #3367d6 !important;
+            transform: scale(1.05);
         }
         
-        /* Menu déroulant */
-        .floating-translate-round .gt_switcher .gt_options {
-            border-radius: 12px !important;
+        /* Style du menu déroulant */
+        .floating-translate .gt_switcher .gt_options {
+            border-radius: 10px !important;
             overflow: hidden !important;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15) !important;
-            margin-bottom: 10px !important;
-            width: 200px !important;
-            max-height: 60vh !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+            max-height: 300px !important;
             overflow-y: auto !important;
-            right: 0 !important;
-            left: auto !important;
         }
         
-        /* Options */
-        .floating-translate-round .gt_switcher .gt_option {
+        /* Style des options */
+        .floating-translate .gt_switcher .gt_option {
             padding: 10px 15px !important;
-            transition: background 0.2s !important;
-        }
-        .floating-translate-round .gt_switcher .gt_option:hover {
-            background: #f1f1f1 !important;
         }
         
-        /* Mobile */
-        @media (max-width: 768px) {
-            .floating-translate-round {
-                bottom: 15px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
-            }
-            .floating-translate-round .gt_switcher .gt_selected {
-                width: 45px;
-                height: 45px;
-            }
-            .floating-translate-round .gt_switcher .gt_selected a:before {
-                font-size: 20px;
-            }
+        /* Icône de langue */
+        .floating-translate .gt_switcher .gt_selected a:before {
+            content: "🌐";
+            margin-right: 8px;
         }
