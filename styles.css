@@ -836,65 +836,6 @@ section {
     opacity: 1;
 }
 
-/* FAQ Section */
-.faq {
-    background-color: #f5f7ff;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background-color: white;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.faq-question:hover {
-    background-color: #f8f9fa;
-}
-
-.faq-question i {
-    transition: var(--transition);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 20px;
-}
-
-.faq-answer-inner {
-    padding: 0 0 20px;
-}
-
-.faq-item.active .faq-question {
-    background-color: #f8f9fa;
-}
-
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px;
-}
-
 /* CTA Section */
 .cta {
     background: linear-gradient(135deg, var(--primary-color) 0%, #6c5ce7 100%);
@@ -1170,201 +1111,99 @@ footer {
     }
 }
 
-/* ============================================= */
-/* Sélecteur de langue - Styles de base */
-/* ============================================= */
 
-.language-selector {
-    position: relative;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: 15px;
-    z-index: 1001;
+/* WHERE TO BUY - SANS IMAGES */
+.where-to-buy {
+    padding: clamp(40px, 5vw, 80px) 0;
+    background-color: #f9f9f9;
 }
 
-/* Cache la checkbox mais garde la fonctionnalité */
-#language-toggle {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(20px, 3vw, 30px);
+    margin-top: clamp(30px, 4vw, 50px);
 }
 
-/* Style du bouton principal */
-.language-current {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 30px;
-    font-weight: 500;
-    color: #2c3e50;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-/* Effet au survol */
-.language-current:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Style des icônes */
-.language-current i {
-    transition: all 0.3s ease;
-}
-
-.language-current i.fa-globe {
-    font-size: 18px;
-    margin-right: 8px;
-    color: #4a6bff;
-}
-
-.language-current i.fa-chevron-down {
-    font-size: 12px;
-    margin-left: 8px;
-}
-
-.language-code {
-    margin: 0 5px;
-}
-
-/* Style de la liste déroulante */
-.language-dropdown {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 160px;
+.partner-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    list-style: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.175);
-    padding: 8px 0;
-    margin-top: 8px;
-    overflow: hidden;
+    padding: clamp(25px, 3vw, 35px);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Affiche le dropdown quand la checkbox est cochée */
-#language-toggle:checked ~ .language-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Rotation de l'icône quand ouvert */
-#language-toggle:checked + .language-current i.fa-chevron-down {
-    transform: rotate(180deg);
-}
-
-/* Style des options de langue */
-.language-dropdown li a {
+.partner-icon {
+    width: 60px;
+    height: 60px;
+    background: #f0f7ff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    padding: 10px 16px;
+    justify-content: center;
+    margin-bottom: clamp(15px, 2vw, 20px);
+}
+
+.partner-icon i {
+    font-size: 24px;
+    color: #0066cc;
+}
+
+.partner-card h3 {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    margin-bottom: 12px;
     color: #333;
+}
+
+.partner-card p {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    margin-bottom: clamp(15px, 2vw, 20px);
+    flex-grow: 1;
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn-small {
+    padding: clamp(6px, 1vw, 8px) clamp(15px, 2vw, 20px);
+    font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+    background: #0066cc;
+    color: white;
+    border-radius: 5px;
     text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 14px;
+    transition: background 0.3s ease;
 }
 
-/* Effet au survol des options */
-.language-dropdown li a:hover {
-    background: #f5f7ff;
-    color: #4a6bff;
+.btn-small:hover {
+    background: #004d99;
 }
 
-/* Style de la langue active */
-.language-dropdown li a.active {
-    background: #f0f4fa;
-    color: #4a6bff;
-    font-weight: 600;
+.disclaimer {
+    margin-top: clamp(25px, 3vw, 40px);
+    padding: clamp(10px, 2vw, 15px);
+    background-color: #f0f7ff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: clamp(0.85rem, 1.1vw, 0.95rem);
 }
 
-/* ============================================= */
-/* Icônes de drapeaux (SVG intégrés) */
-/* ============================================= */
-
-.flag-icon {
-    display: inline-block;
-    width: 20px;
-    height: 15px;
-    margin-right: 12px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 2px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* France */
-.flag-fr { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23002395" d="M0 0h3v6H0z"/><path fill="%23fff" d="M3 0h3v6H3z"/><path fill="%23ED2939" d="M6 0h3v6H6z"/></svg>'); }
-
-/* Royaume-Uni (pour anglais) */
-.flag-gb { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><path fill="%23012169" d="M0 0v30h60V0z"/><path fill="%23FFF" d="M0 0v3.75h60V0zm0 11.25v7.5h60v-7.5zM0 26.25V30h60v-3.75z"/><path fill="%23C8102E" d="M0 5.625V8.25h60V5.625zm0 11.25v2.625h60v-2.625zM0 22.5v2.625h60V22.5z"/><path fill="%23FFF" d="M25 0v30h10V0z"/><path fill="%23C8102E" d="M27.5 0v30h5V0z"/></svg>'); }
-
-/* Allemagne */
-.flag-de { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"><path fill="%23000" d="M0 0h5v3H0z"/><path fill="%23D00" d="M0 1h5v2H0z"/><path fill="%23FFCE00" d="M0 2h5v1H0z"/></svg>'); }
-
-/* Italie */
-.flag-it { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"><path fill="%23009246" d="M0 0h5v3H0z"/><path fill="%23FFF" d="M1.666 0h1.666v3H1.666z"/><path fill="%23CE2B37" d="M3.333 0H5v3H3.333z"/></svg>'); }
-
-/* Espagne */
-.flag-es { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23AA151B" d="M0 0h9v6H0z"/><path fill="%23F1BF00" d="M0 1h9v4H0z"/></svg>'); }
-
-/* Portugal */
-.flag-pt { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="%23046A38" d="M0 0h9v6H0z"/><path fill="%23DA291C" d="M4.5 0h4.5v6H4.5z"/><path fill="%23FFD700" d="M3 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>'); }
-
-/* ============================================= */
-/* Responsive - Adaptations pour mobile */
-/* ============================================= */
-
-@media (max-width: 768px) {
-    .language-selector {
-        margin-right: 10px;
-    }
-    
-    .language-current {
-        padding: 8px 12px;
-        border-radius: 24px;
-    }
-    
-    .language-current i.fa-globe {
-        font-size: 16px;
-        margin-right: 6px;
-    }
-    
-    .language-code {
-        display: none; /* Cache le code langue sur mobile */
-    }
-    
-    .language-dropdown {
-        width: 140px;
-        right: -10px;
-    }
-    
-    .flag-icon {
-        width: 18px;
-        height: 13px;
-        margin-right: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .language-current {
-        padding: 6px 8px;
-    }
-    
-    .language-current i.fa-globe {
-        font-size: 14px;
-        margin-right: 0;
-    }
-    
-    .language-dropdown {
-        width: 130px;
-    }
+/* Accessibilité */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
