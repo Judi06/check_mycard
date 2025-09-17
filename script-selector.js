@@ -9,3 +9,27 @@ window.gtranslateSettings = {
     switcher_close_on_scroll: true,  /* Fermer lors du défilement */
     switcher_display_mode: "popup"   /* Mode popup pour économiser l'espace */
 };
+
+// --- NOUVEAU : Forcer la traduction automatique au chargement ---
+
+// Cette fonction s'exécute lorsque la page est entièrement chargée.
+window.addEventListener('load', function( ) {
+    // Crée un petit délai pour s'assurer que le script GTranslate est bien initialisé.
+    setTimeout(function() {
+        // Vérifie si la fonction de traduction de GTranslate est disponible.
+        if (typeof doGTranslate === 'function') {
+            // Récupère la langue du navigateur (ex: 'en' pour anglais).
+            const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
+            
+            // Récupère la langue actuelle de la page (ex: 'fr' pour français).
+            const currentLang = document.documentElement.lang.split('-')[0];
+
+            // Si la langue du navigateur est différente de la langue actuelle, on lance la traduction.
+            if (browserLang !== currentLang) {
+                // Construit le code de langue pour GTranslate (ex: 'fr|en').
+                const translationCode = `${currentLang}|${browserLang}`;
+                doGTranslate(translationCode);
+            }
+        }
+    }, 500); // Un délai de 500ms est généralement suffisant.
+});
