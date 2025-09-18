@@ -8,38 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
-    <!-- 1. Le conteneur pour le moteur Google Translate (il restera invisible) -->
+    <link rel="stylesheet" href="style-selector.css">
+    <!-- Google Translate Element Configuration -->
     <div id="google_translate_element" style="display:none;"></div>
-
-    <!-- 2. Le script de l'API Google Translate -->
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- 3. NOTRE SCRIPT DE CONFIGURATION (VERSION CORRIGÉE ET SIMPLIFIÉE) -->
     <script type="text/javascript">
-        function googleTranslateElementInit() {
+        function googleTranslateElementInit( ) {
             new google.translate.TranslateElement({
                 pageLanguage: 'fr',
-                autoDisplay: false
+                autoDisplay: false,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
 
-            // On attend que le widget soit prêt.
+            // Traduction automatique (logique inchangée)
             setTimeout(function(){
-                // Récupère la langue du navigateur (ex: "en", "es").
                 const userLang = (navigator.language || navigator.userLanguage).substr(0, 2);
-
-                // Si la langue du navigateur n'est pas le français...
-                if (userLang !== 'fr') {
-                    const select = document.querySelector('#google_translate_element select');
-                    // ... et si le widget est bien chargé...
-                    if (select) {
-                        // ... on change la valeur du sélecteur pour la langue de l'utilisateur...
-                        select.value = userLang;
-                        // ... et on déclenche l'événement 'change' pour que Google traduise la page.
-                        select.dispatchEvent(new Event('change'));
+                const cookie = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)');
+                if (!cookie) {
+                    if (userLang !== 'fr') {
+                        const select = document.querySelector('#google_translate_element select');
+                        if (select) {
+                            select.value = userLang;
+                            select.dispatchEvent(new Event('change'));
+                        }
                     }
                 }
-            }, 1000); // Augmentation du délai à 1 seconde pour plus de fiabilité
+            }, 1000);
         }
     </script>
 
@@ -618,6 +612,18 @@
         </div>
     </div>
 
+        <!-- NOUVEAU : Sélecteur de langue personnalisé (conteneur vide pour les options) -->
+    <div class="custom-language-switcher">
+        <div class="selected-language">
+            <i class="fas fa-globe"></i>
+            <span>Langue</span>
+            <i class="fas fa-chevron-up"></i>
+        </div>
+        <div class="language-options">
+            <!-- Ce conteneur sera rempli automatiquement par le script -->
+        </div>
+    </div>
+
     <!-- Notification -->
     <div class="notification" id="notification">
         Merci pour votre avis ! Nous l'avons bien reçu.
@@ -659,6 +665,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="script-selector.js"></script>
     <script src="//code.tidio.co/u8u7pdwcln1nigxjfyou67nmbqfkbips.js" async></script>
 </body>
 </html>

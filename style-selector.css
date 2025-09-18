@@ -1,67 +1,69 @@
-/* Style modernisé pour le sélecteur flottant (position gauche) */
-.floating-translate {
+/* style-selector.css */
+
+.custom-language-switcher {
     position: fixed;
-    bottom: 20px; /* Ajusté pour être plus proche du bord */
-    left: 20px;   /* Déplacé à gauche */
-    z-index: 9999;
-    transition: all 0.3s ease;
-    font-family: 'Segoe UI', sans-serif; /* Police moderne */
+    bottom: 20px;
+    left: 20px;
+    z-index: 1001;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Bouton principal */
-.floating-translate .gt_switcher .gt_selected {
-    background: linear-gradient(135deg, #4285f4, #34a853) !important;
-    color: white !important;
-    padding: 12px 24px !important; /* Légèrement plus large */
-    border-radius: 30px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    border: none !important;
-    font-weight: 600 !important; /* Semi-gras */
+.custom-language-switcher .selected-language {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
     display: flex;
     align-items: center;
-    cursor: pointer;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-/* Effet de survol */
-.floating-translate .gt_switcher .gt_selected:hover {
-    background: linear-gradient(135deg, #3367d6, #2d8c4a) !important;
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+.custom-language-switcher .selected-language:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Menu déroulant */
-.floating-translate .gt_switcher .gt_options {
-    border-radius: 12px !important; /* Bords plus arrondis */
-    overflow: hidden !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-    max-height: 400px !important; /* Plus grand si besoin */
-    margin-bottom: 10px; /* Espace avec le bouton */
-    background: white !important;
+.custom-language-switcher .selected-language .fa-chevron-up {
+    transition: transform 0.3s ease;
+    font-size: 0.9em;
 }
 
-/* Options de langue */
-.floating-translate .gt_switcher .gt_option {
-    padding: 12px 20px !important; /* Plus spacieux */
+.custom-language-switcher .language-options {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Ajout pour le défilement si la liste est longue */
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.custom-language-switcher.open .language-options {
+    max-height: 300px; /* Hauteur max avant que le défilement n'apparaisse */
+    opacity: 1;
+}
+
+.custom-language-switcher.open .selected-language .fa-chevron-up {
+    transform: rotate(180deg);
+}
+
+.language-options .lang-option {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
     transition: background 0.2s ease;
+    white-space: nowrap;
 }
 
-.floating-translate .gt_switcher .gt_option:hover {
-    background: #f5f5f5 !important;
-}
-
-/* Icône de langue */
-.floating-translate .gt_switcher .gt_selected a:before {
-    content: "🌐";
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-/* Animation d'ouverture */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.floating-translate .gt_switcher .gt_options {
-    animation: fadeIn 0.3s ease-out;
+.language-options .lang-option:hover {
+    background: #f5f5f5;
 }
