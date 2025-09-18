@@ -1,69 +1,20 @@
-/* style-selector.css */
+/* styles.css -> à ajouter à la fin */
 
-.custom-language-switcher {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1001;
-    font-family: 'Poppins', sans-serif;
-}
-
-.custom-language-switcher .selected-language {
-    background: linear-gradient(135deg, #4285f4, #34a853);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
+/* Centre le sélecteur de langue de Google dans le footer */
+.footer-language-selector {
+    padding: 20px 0;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    font-weight: 500;
 }
 
-.custom-language-switcher .selected-language:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+/* Améliore légèrement l'apparence du widget de Google */
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
 }
 
-.custom-language-switcher .selected-language .fa-chevron-up {
-    transition: transform 0.3s ease;
-    font-size: 0.9em;
-}
-
-.custom-language-switcher .language-options {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    margin-bottom: 10px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Ajout pour le défilement si la liste est longue */
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
-}
-
-.custom-language-switcher.open .language-options {
-    max-height: 300px; /* Hauteur max avant que le défilement n'apparaisse */
-    opacity: 1;
-}
-
-.custom-language-switcher.open .selected-language .fa-chevron-up {
-    transform: rotate(180deg);
-}
-
-.language-options .lang-option {
-    display: block;
-    padding: 12px 20px;
-    color: #333;
-    text-decoration: none;
-    transition: background 0.2s ease;
-    white-space: nowrap;
-}
-
-.language-options .lang-option:hover {
-    background: #f5f5f5;
+.goog-te-gadget-simple .goog-te-menu-value {
+    color: #bbb !important; /* Couleur du texte assortie au footer */
+    font-size: 0.9rem;
 }

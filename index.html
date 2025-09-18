@@ -9,24 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style-selector.css">
-    <!-- Google Translate Element Configuration -->
-    <div id="google_translate_element" style="display:none;"></div>
+    <!-- Google Translate Element Configuration (simplifié ) -->
+    <!-- Le conteneur invisible pour le moteur reste ici -->
+    <div id="google_translate_element_invisible" style="display:none;"></div>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
-        function googleTranslateElementInit( ) {
+        function googleTranslateElementInit() {
+            // 1. Initialise le moteur invisible pour la traduction automatique
             new google.translate.TranslateElement({
                 pageLanguage: 'fr',
                 autoDisplay: false,
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
+            }, 'google_translate_element_invisible');
 
-            // Traduction automatique (logique inchangée)
+            // 2. Initialise un DEUXIÈME widget, visible, qu'on placera dans le footer
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element_visible');
+
+            // Logique de traduction automatique (inchangée)
             setTimeout(function(){
                 const userLang = (navigator.language || navigator.userLanguage).substr(0, 2);
                 const cookie = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)');
                 if (!cookie) {
                     if (userLang !== 'fr') {
-                        const select = document.querySelector('#google_translate_element select');
+                        // On utilise le moteur invisible pour la traduction
+                        const select = document.querySelector('#google_translate_element_invisible select');
                         if (select) {
                             select.value = userLang;
                             select.dispatchEvent(new Event('change'));
@@ -612,18 +620,6 @@
         </div>
     </div>
 
-        <!-- NOUVEAU : Sélecteur de langue personnalisé (conteneur vide pour les options) -->
-    <div class="custom-language-switcher">
-        <div class="selected-language">
-            <i class="fas fa-globe"></i>
-            <span>Langue</span>
-            <i class="fas fa-chevron-up"></i>
-        </div>
-        <div class="language-options">
-            <!-- Ce conteneur sera rempli automatiquement par le script -->
-        </div>
-    </div>
-
     <!-- Notification -->
     <div class="notification" id="notification">
         Merci pour votre avis ! Nous l'avons bien reçu.
@@ -657,6 +653,11 @@
                     </ul>
                 </div>
 
+            <!-- NOUVEAU : Emplacement pour le sélecteur de langue visible de Google -->
+            <div class="footer-language-selector">
+                <div id="google_translate_element_visible"></div>
+            </div>
+
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2023 Activate myCard. Tous droits réservés.</p>
@@ -665,7 +666,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="script-selector.js"></script>
     <script src="//code.tidio.co/u8u7pdwcln1nigxjfyou67nmbqfkbips.js" async></script>
 </body>
 </html>
