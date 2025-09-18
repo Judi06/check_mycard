@@ -1185,30 +1185,3 @@ footer {
 .privacy-policy a:hover {
     text-decoration: underline;
 }
-
-
-/* ============================================= */
-/* Style pour le conteneur du widget Google      */
-/* ============================================= */
-
-.google-translate-container {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 1001;
-    background: white;
-    padding: 5px 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Style pour le widget de Google lui-même */
-.goog-te-gadget-simple {
-    background-color: transparent !important;
-    border: none !important;
-    font-size: 0.9rem;
-}
-
-.goog-te-gadget-simple .goog-te-menu-value span {
-    color: #333 !important;
-}

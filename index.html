@@ -8,33 +8,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Google Translate Element Configuration -->
-    <!-- Le script de l'API Google Translate -->
+    <!-- 1. Le conteneur pour le moteur Google Translate (il restera invisible) -->
+    <div id="google_translate_element" style="display:none;"></div>
+
+    <!-- 2. Le script de l'API Google Translate -->
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Le script de configuration mis à jour -->
+    <!-- 3. NOTRE SCRIPT DE CONFIGURATION (VERSION CORRIGÉE ET SIMPLIFIÉE) -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'fr',
-                // La ligne 'autoDisplay: false' a été SUPPRIMÉE pour que le widget s'affiche.
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                autoDisplay: false
             }, 'google_translate_element');
 
-            // La logique de traduction automatique reste la même
+            // On attend que le widget soit prêt.
             setTimeout(function(){
+                // Récupère la langue du navigateur (ex: "en", "es").
                 const userLang = (navigator.language || navigator.userLanguage).substr(0, 2);
-                const cookie = document.cookie.match('(^|;) ?googtrans=([^;]*)(;|$)');
-                if (!cookie) {
-                    if (userLang !== 'fr') {
-                        const select = document.querySelector('#google_translate_element select');
-                        if (select) {
-                            select.value = userLang;
-                            select.dispatchEvent(new Event('change'));
-                        }
+
+                // Si la langue du navigateur n'est pas le français...
+                if (userLang !== 'fr') {
+                    const select = document.querySelector('#google_translate_element select');
+                    // ... et si le widget est bien chargé...
+                    if (select) {
+                        // ... on change la valeur du sélecteur pour la langue de l'utilisateur...
+                        select.value = userLang;
+                        // ... et on déclenche l'événement 'change' pour que Google traduise la page.
+                        select.dispatchEvent(new Event('change'));
                     }
                 }
-            }, 1000);
+            }, 1000); // Augmentation du délai à 1 seconde pour plus de fiabilité
         }
     </script>
 
@@ -611,11 +615,6 @@
                 <button type="submit" class="submit-review">Activer mon Ticket</button>
             </form>
         </div>
-    </div>
-
-        <!-- NOUVEAU : Conteneur flottant pour le widget Google Translate -->
-    <div class="google-translate-container">
-        <div id="google_translate_element"></div>
     </div>
 
     <!-- Notification -->
